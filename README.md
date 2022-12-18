@@ -1,28 +1,28 @@
-<h1>Diceware Passphrase Generator</h1>
+# Diceware Passphrase Generator
 
 An implementation of the [Diceware](https://theworld.com/~reinhold/diceware.html) method for creating passphrases based on [libsodium.js](https://github.com/jedisct1/libsodium.js).
 
-<h2>What Is A Passphrase?</h2>
+## What Is A Passphrase?
 
 A passphrase is a memorized secret consisting of a sequence of words or other text that a claimant uses to authenticate their identity. A passphrase is similar to a password in usage, but is generally longer for added security. Randomly-generated passphrases offer a major security upgrade over user-chosen passwords.
 
-<h2>What Is Diceware?</h2>
+## What Is Diceware?
 
 Diceware is a technique that uses dice to produce random text for passphrases and other uses. The Diceware method provides an easy way to create strong passphrase that are easy to remember.
 
 For each word in the passphrase, five rolls of a six-sided die are required. The numbers from 1 to 6 that come up in the rolls are assembled as a five-digit number. That number is then used to look up a word in a word list. By generating several words in sequence, a lengthy passphrase can be constructed randomly.
 
-<h2>Generating Dice Rolls</h2>
+## Generating Dice Rolls
 
 `createPassphrase()` generates an unpredictable random number between 1 and 6 using the `randombytes_uniform()` function from **libsodium.js**.
 
 The `randombytes_uniform()` function returns an unpredictable value between 0 and upper_bound (excluded). Unlike randombytes_random() % upper_bound, it guarantees a uniform distribution of the possible output values even when upper_bound is not a power of 2.
 
-<h2>Diceware Word List</h2>
+## Diceware Word List
 
 The script uses a [EFF's Long Wordlist](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) (contain 7776 words) that was converted into a JavaScript file (dictionary) for easier lookup.
 
-<h2>Usage (in a web browser)</h2>
+## Usage (in a web browser)
 
 ```html
   <div id="passphrase"></div>
@@ -42,11 +42,11 @@ The script uses a [EFF's Long Wordlist](https://www.eff.org/files/2016/07/18/eff
   <script src="sodium.js" async></script>
 ```
 
-<h2>Authors</h2>
+## Authors
 
 * Serhiy Guryev, https://github.com/serhiyguryev
 
-<h2>Links And References</h2>
+## Links And References
 
 * [The Diceware Passphrase Home Page](https://theworld.com/~reinhold/diceware.html)
 * [The Diceware Passphrase FAQ](https://theworld.com/~reinhold/dicewarefaq.html)
